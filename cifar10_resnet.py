@@ -27,6 +27,7 @@ batch_size = 32
 epochs = 100
 data_augmentation = True
 random_erasing = True
+pixel_level = False
 
 # Network architecture params.
 num_classes = 10
@@ -176,7 +177,7 @@ else:
         height_shift_range=0.1,  # randomly shift images vertically (fraction of total height)
         horizontal_flip=True,  # randomly flip images
         vertical_flip=False,  # randomly flip images
-        preprocessing_function=get_random_eraser(v_l=0, v_h=1))
+        preprocessing_function=get_random_eraser(v_l=0, v_h=1, pixel_level=pixel_level))
 
     # Compute quantities required for featurewise normalization
     # (std, mean, and principal components if ZCA whitening is applied).
