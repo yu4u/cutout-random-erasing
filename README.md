@@ -13,6 +13,8 @@ that are randomly masked with random values.
 
 <img src="example.png" width="480px">
 
+<img src="example2.png" width="480px">
+
 ## Usage
 ### With ImageDataGenerator in Keras
 It is very easy to use if you are using ImageDataGenerator in Keras;
@@ -52,13 +54,18 @@ img = eraser(img)
 Pleae check [example.ipynb](example.ipynb) for complete example.
 
 ### Parameters
-Parameters are fully configurable as `get_random_eraser(p=0.5, s_l=0.02, s_h=0.4, r_1=0.3, r_2=1/0.3, v_l=0, v_h=255)`.
+Parameters are fully configurable as:
+
+```
+get_random_eraser(p=0.5, s_l=0.02, s_h=0.4, r_1=0.3, r_2=1/0.3,
+                  v_l=0, v_h=255, pixel_level=False)
+```
 
 - `p` : the probability that random erasing is performed
 - `s_l`, `s_h` : minimum / maximum proportion of erased area against input image
 - `r_1`, `r_2` : minimum / maximum aspect ratio of erased area
 - `v_l`, `v_h` : minimum / maximum value for erased area
-
+- `pixel_level` : pixel-level randomization for erased area
 
 
 ## Results
@@ -74,6 +81,13 @@ With cutout / random erasing:
 ```
 Test loss: 0.445597583055
 Test accuracy: 0.9182
+```
+
+With cutout / random erasing (pixel-level):
+
+```
+Test loss: 0.446407950497
+Test accuracy: 0.9213
 ```
 
 
