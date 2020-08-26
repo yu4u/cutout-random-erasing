@@ -32,10 +32,7 @@ def get_random_eraser(p=0.5, s_l=0.02, s_h=0.4, r_1=0.3, r_2=1/0.3, v_l=0, v_h=2
         else:
             c = np.random.uniform(v_l, v_h)
 
-        if input_img.ndim == 3:
-            input_img[top:top + h, left:left + w, :] = c
-        if input_img.ndim == 2:
-            input_img[top:top + h, left:left + w] = c
+        input_img[top:top + h, left:left + w] = c
 
         return input_img
 
